@@ -1,0 +1,72 @@
+{
+  "oil_quantity_litres": {
+    "RF": {
+      "04": {"M1": 2.00, "M2": 1.80, "M3": 1.80, "M4": 1.80, "M5": 1.50, "M6": 1.50},
+      "05": {"M1": 2.50, "M2": 2.20, "M3": 2.20, "M4": 2.20, "M5": 3.00, "M6": 3.40},
+      "06": {"M1": 3.50, "M2": 4.25, "M3": 4.00, "M4": 4.00, "M5": 4.50, "M6": 4.50},
+      "07": {"M1": 6.50, "M2": 6.75, "M3": 7.20, "M4": 7.20, "M5": 8.50, "M6": 9.30},
+      "08": {"M1": 10.00, "M2": 9.25, "M3": 9.75, "M4": 9.75, "M5": 13.00, "M6": 13.50},
+      "09": {"M1": 21.00, "M2": 11.50, "M3": 15.50, "M4": 15.50, "M5": 22.50, "M6": 22.50},
+      "10": {"M1": 35.00, "M2": 24.20, "M3": 28.20, "M4": 27.20, "M5": 43.20, "M6": 43.20}
+    },
+    "RK": {
+      "04": {"M1": 1.00, "M2": 1.20, "M3": 1.20, "M4": 1.50, "M5": 1.90, "M6": 1.40},
+      "06": {"M1": 2.00, "M2": 3.50, "M3": 3.50, "M4": 3.00, "M5": 3.50, "M6": 3.00},
+      "07": {"M1": 6.00, "M2": 5.50, "M3": 5.50, "M4": 6.00, "M5": 6.00, "M6": 5.50},
+      "08": {"M1": 6.00, "M2": 10.00, "M3": 10.00, "M4": 11.00, "M5": 12.00, "M6": 10.00},
+      "09": {"M1": 9.70, "M2": 17.00, "M3": 17.00, "M4": 18.00, "M5": 21.00, "M6": 16.00},
+      "10": {"M1": 18.00, "M2": 35.00, "M3": 35.00, "M4": 30.20, "M5": 34.20, "M6": 25.20}
+    }
+  },
+  "oil_quantity_source": "RF-RK Catalogue pp.18-19, Section 6 Mounting Position & Lubricant Quantity",
+  "lubricant_type": {
+    "value": "ISO VG 320",
+    "source": "RF-RK Catalogue p.13 General Specifications: Grade ISO VG 320; Filled with Oil. Oil type table p.22: mineral oil 0-35 C = 320."
+  },
+  "hollow_keyway_D_mm": {
+    "RF": {"04": 35, "05": 40, "06": 50, "07": 60, "08": 70, "09": 75, "10": 90},
+    "RK": {"04": 40, "06": 50, "07": 60, "08": 70, "09": 75, "10": 90}
+  },
+  "hollow_keyway_source": "RF-RK Catalogue p.14 (RF) and p.15 (RK) Low speed hollow shaft dia (D)",
+  "output_flange_P_mm": {
+    "RF": {"04": 160, "05": 200, "06": 250, "07": 250, "08": 350, "09": 450, "10": 450},
+    "RK": {"04": 160, "06": 250, "07": 300, "08": 350, "09": 450, "10": 450}
+  },
+  "output_flange_source": "RF-RK Catalogue p.14 (RF) and p.15 (RK) Output flange diameter (P)",
+  "shrink_disc_D": {
+    "RF": {"04": "35H7/h6", "05": "40H7/h6", "06": "50H7/h6", "07": "65H7/h6", "08": "75H7/h6", "09": "75H7/h6", "10": "95H7/h6"},
+    "RK": {"04": "35H7/h6", "06": "50H7/h6", "07": "65H7/h6", "08": "75H7/h6"}
+  },
+  "shrink_disc_source": "RF-RK Catalogue p.65 RF ACC and p.95 RK ACC",
+  "rk_solid_AS": {
+    "04": "ø30k6 x 60L",
+    "06": "ø40k6 x 80L",
+    "07": "ø50k6 x 100L",
+    "08": "ø60m6 x 120L",
+    "09": "ø70m6 x 140L",
+    "10": "ø90m6 x 140L"
+  },
+  "rk_solid_source": "RF-RK Catalogue p.94 RK Solid Low Speed Shaft Details (AS): D and E",
+  "iec_b5_flange_W_mm": {
+    "63": 140, "71": 160, "80": 200, "90": 200, "100": 250, "112": 250,
+    "132": 300, "160": 350, "180": 350, "200": 400, "225": 450
+  },
+  "iec_b5_source": "RF-RK Catalogue p.96 Frame Size øW",
+  "motor_common": {
+    "voltage_V": "240 / 415",
+    "frequency_Hz": "50",
+    "protection_class": "IP 55",
+    "insulation_class": "F",
+    "duration_factor": "S1-100",
+    "efficiency_class": "IE3",
+    "ce_marking": "Yes",
+    "design_requirement": "Europe (CE)",
+    "motor_type_smx": "Standard",
+    "motor_type_bax": "Brake",
+    "source": "RF-RK Catalogue p.28 Electric Motors; p.31 CE Mark; p.28 SMX Standard / BAX Brake; p.11-13 IE3, IE2"
+  },
+  "direction_of_rotation": {
+    "value": "Bi-directional",
+    "source": "RF-RK Catalogue p.96: backstop is optional to prevent one direction. Standard selection tables do not include backstop, so rotation is bi-directional."
+  }
+}

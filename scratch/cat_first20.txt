@@ -1,0 +1,994 @@
+
+===== PAGE 1 =====
+www.mgmvarvelindia.com
+RF • RK Catalogue
+Parallel and Heli-Bevel Gear Motors
+
+
+===== PAGE 2 =====
+
+
+===== PAGE 3 =====
+
+
+===== PAGE 4 =====
+This page is left blank intentionally
+4
+RF • RK  SERIES
+
+
+===== PAGE 5 =====
+MGM-VARVEL - A Joint Venture
+MGM-Varvel Product Ranges 
+Symbols and units of measure 
+General Specifications
+Designation 
+Mounting Position & Lubricant Quantity 
+Oil Plugs Position
+Lubrication & Terminal Box Position 
+Service Factor 
+Electric Motors 
+Service Duty Types 
+MGM-VARVEL Motors Running On Inverter 
+Electric Motors - Standards & Approvals 
+Selection Tables - Parallel Helical Gear Reducers (RF Series) 
+Selection Tables - Parallel Helical Gear Motors (RF Series) 
+Dimensional Details - Parallel Helical Gear Units (RF Series) 
+Selection Tables - Helical-Bevel Gear Reducers (RK Series) 
+Selection Tables - Helical-Bevel Gear Motors (RK Series) 
+Dimensional Details - Helical-Bevel Gear Units (RK Series) 
+Output Direction of Rotation with Backstop
+Overhung Load (Radial Load) 
+Operation and Maintenance Instructions 
+Notes 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+07
+08
+11
+13
+16
+18
+20
+22
+23
+28
+29
+30
+31
+32
+36
+47
+66
+70
+79
+96
+97
+98
+99
+Contents
+RF • RK  SERIES
+5
+
+
+===== PAGE 6 =====
+This page is left blank intentionally
+6
+RF • RK  SERIES
+
+
+===== PAGE 7 =====
+VARVEL SpA
+MGM Motori Elettrici SpA
+MGM-VARVEL Power Transmission Pvt. Ltd. has been supplying top quality, 
+high precision, Italian made, mechanical engineering products to Indian 
+manufacturers since 2011.
+The joint venture can rely on the combined expertise of the two leading 
+Italian companies behind it: Varvel SpA and MGM Motori Elettrici SpA, 
+specialists in power transmission systems and electric motors (especially 
+self-breaking) respectively.
+MGM-VARVEL’s base in Chennai, a large industrial town in the south east of 
+India, serves both as assembly centre for the gearboxes and motors imported 
+from Italy and as a strategic logistic centre for the distribution of products 
+throughout India.
+In order to integrate Italian products into the Indian economy as effectively 
+as possible, local professionals have been employed to run the joint venture’s 
+functions since its formation. The company’s management, technical office, 
+accounts and sales force are rigorously Indian.
+www.mgmvarvelindia.com
+Founded 
+in 
+1955, 
+VARVEL 
+was 
+the 
+first 
+manufacturer 
+producing variable speed drives in Italy after the World War II, 
+focusing then into the 
+manufacturing 
+of 
+mechanical 
+power 
+transmission 
+drives. 
+Headquartered at Crespellano, close to 
+Bologna in Italy.
+Gearboxes of VARVEL are well regarded in manufacturing, 
+mechanical, 
+ceramic, textile, food, chemical, pharmaceutical, 
+woodworking, plastic, rubber and other main industries.
+www.varvel.com
+Established in 1944 and started producing brake motors in 
+1950, MGM is a leading manufacturer in the field of fail-safe 
+brake motors. Head office and production are located in 
+Serravalle Pistoiese (PT), close to Florence in Italy.
+MGM is present in more than 50 countries in the world. MGM 
+brake motors are particularly suitable for hoisting and traverse 
+machines, tooling machinery, automatic and transfer machinery 
+in textile, ceramic and packing fields and in all situations where 
+precision and quickness in braking is required. The perfect 
+engineering and assembling, combined with a strong and safe 
+brake, make these motors very reliable.
+www.mgmrestop.com
+RF • RK SERIES 
+1 - MGM-VARVEL - A Joint Venture
+ MGM-VARVEL Power Transmission Pvt. Ltd.
+7
+
+
+===== PAGE 8 =====
+RF
+RK
+Co-axial Helical Gear Motors (RD)
+Worm Gear Motors (RS/RT)
+7 (with 2 or 3 reduction stages) 
+Aluminium housing till size 4 and 
+Cast iron from size 5
+From 2.25 to 630:1
+Excellent stress resistance
+Extended lifetime with excellent reliability 
+High efficiency
+Low maintenance and management costs 
+Modular concept
+Versatility of use
+Sizes
+Reduction Ratios
+0
+1
+2
+3
+4
+5
+6
+2300 Nm
+1300 Nm
+700 Nm
+430 Nm
+200 Nm
+100 Nm
+55 Nm
+Parallel Helical Gear Motors (RN)
+6 (with 2 or 3 reduction stages) 
+Aluminium housing till size 3 and 
+Cast iron from size 4
+From 6.3 to 710:1
+Easy installation and maintenance 
+Extended lifetime with excellent reliability 
+High efficiency
+Low maintenance and management costs 
+Modular concept
+Silent running
+Sizes
+Reduction Ratios
+1
+2
+3
+4
+5
+6
+3400 Nm
+1800 Nm
+1000 Nm
+  580  Nm
+310 Nm
+180 Nm
+From 5 to 10,000:1
+Easy installation and maintenance 
+Extended lifetime with excellent reliability 
+Long life lubrication
+Low maintenance and management costs 
+Modular concept
+Versatility of use
+Sizes
+Reduction Ratios
+9 for RS and 7 for RT (up to 110)
+Aluminium housing till size 85 and 
+Cast iron from size 110
+28
+40
+50
+60
+70
+85
+110
+130
+150
+1150 Nm
+1680 Nm
+700 Nm
+400 Nm
+240 Nm
+140 Nm
+85 Nm
+50 Nm
+20 Nm
+ATEX version for potentially explosive environments
+ATEX version for potentially explosive environments
+ATEX version for potentially explosive environments
+2 - MGM-VARVEL Product Ranges
+8
+RF • RK SERIES 
+
+
+===== PAGE 9 =====
+From 6.3 to 315:1
+Easy installation and maintenance 
+Extended lifetime with excellent reliability 
+High efficiency
+Long life lubrication
+Low maintenance and management costs 
+Modular concept
+Sizes
+Reduction Ratios
+6 (with 3 reduction stages) 
+Aluminium housing till size 3 and 
+Cast iron from size 4
+1
+2
+3
+4
+5
+6
+3360 Nm
+1800 Nm
+580 Nm
+310 Nm
+180 Nm
+5
+7
+9
+12
+230 Nm
+98 Nm
+35 Nm
+11 Nm
+ATEX version for potentially explosive environments
+Servo Planetary Gear Motors (RG)
+Sizes
+• Sizes: 4 (with 1 or 2 reduction stages)
+• Housing: hardened and tempered steel
+• Reduction ratios: from 3 to 100:1
+• Input speed 2500rpm to 4800rpm
+Standard Motors (SMX)
+AC Three phase squirrel cage 
+induction motors
+IEC Metric Motors from 56 to 225 
+frame size
+Totally enclosed fan cooled (TEFC), continuous duty
+IP 55 Enclosure (IP 56 / 65 / 66 on request)
+F class insulation (H class on request)
+Easy installation and maintenance 
+Extended lifetime with excellent reliability 
+High efficiency
+High precision
+Silent running
+Weight reduced
+Sizes
+• Sizes: 1 (with 1 reduction stage)
+• Housing: in aluminium
+• Reduction ratios: from 2.5 to 8:1
+Easy installation and maintenance 
+Extended lifetime with excellent reliability 
+Long life lubrication
+Low maintenance and management costs 
+Modular concept
+Silent running
+IE2 / IE3 efficiency class
+Hexagonal hole on shaft end for 
+manual rotation 
+(as standard up to 132 frame size)
+BIS Marking
+CE Marking
+cCSAus markimg
+GOST-R certification (on request)
+ CCC Marking
+1000 Nm
+2 - MGM-VARVEL Product Ranges
+Bevel Helical Gear Motors (RO/RV)
+Helical Gear Motors For Farming (F RP 680)
+RF • RK SERIES 
+9
+
+
+===== PAGE 10 =====
+Constant torque from 3 to 120Hz
+Torque close to the nominal one at
+0 rpm (in a closed loop vector system)
+Higher Power Density
+(same power in smaller motor sizes)
+Reduced moment of inertia compared to
+a motor with same power (high dynamics)
+Faster acceleration and deceleration times
+With AC / DC brakes and non-braking motors
+R-Series
+Special Motors (R-Series / BAHX / BMBM)
+Greater strength and protection 
+against the entry of dust and liquids
+Suitable for harsh environment
+ (i.e. marine application)
+Standard with IP55 protection, 
+on request, with IP56-65-66 
+protection degree
+BAHX
+Twin DC brakes working independently of each other 
+High reliability in those lifting applications
+Particularly suitable to be used in 
+TV-cine studios and theatre stages
+BMBM -Series
+Brake Motors (BAX)
+Brake motors from 71 to 315 frame size
+Totally enclosed fan cooled (TEFC), 
+continuous duty
+IP 55 Enclosure (IP 56 / 65 / 66 on request)
+F class insulation (H class on request)
+AC or DC Brake, very high brake torque
+Very quick braking action
+A very high number of start/stop 
+cycles also under severe applications
+Manual brake release screw
+Hexagonal hole on shaft end for manual 
+rotation (as standard up to 132 frame size)
+IE2 / IE3 efficiency class
+BIS Marking
+CE Marking
+cCSAus markimg
+GOST-R certification (on request)
+ CCC Marking
+Brake Motors (BMX)
+F class insulation (H class on request) 
+DC Brake, Gradual braking action
+Gradual acceleration during 
+motor start and stop
+Manual brake release lever
+Hexagonal hole on shaft end for manual 
+rotation (as standard up to 132 frame size)
+Brake motors from 56 to 160 frame size
+Totally enclosed fan cooled (TEFC), 
+continuous duty
+IP 55 Enclosure (IP 56 / 65 / 66 on request) 
+IE2 / IE3 efficiency class
+GOST-R certification (on request)
+BIS Marking 
+CE Marking 
+cCSAus markimg 
+CCC Marking
+2 - MGM-VARVEL Product Ranges
+10
+RF • RK SERIES 
+
+
+===== PAGE 11 =====
+3 - Symbols and units of measure
+Definition
+Symbol
+Units
+Notes
+dimensions
+mm
+acceleration
+a
+m/s2
+diameter
+d
+m
+service factor
+fs
+force
+F
+N
+radial load
+Fr
+N
+axial load
+Fa
+N
+acceleration of gravity
+g
+m/s2
+normal value 9,81 m/s2
+weight (weight force)
+G
+N
+dynamic moment
+Gd2
+kgm2
+transmission ratio
+i
+i = n1/n2
+electric current
+I
+A
+moment of inertia
+J
+kg m2
+mass
+m
+kg
+torque
+M
+N m
+braking torque
+Mf
+N m
+angular speed
+n
+min-1
+1 min-1 ≈ 0,105 rad/s
+power
+P
+kW
+radius
+r
+m
+distance
+s
+m
+Celsius temperature
+t
+°C
+1°F = 1.8°C + 32
+time
+t
+s
+min
+1 min = 60 s
+h
+1 h = 60 min = 3600 s
+d
+1 d = 24 h = 86400 s
+voltages
+U
+V
+frequency
+f
+Hz
+velocity
+v
+m/s
+work, energy
+W
+MJ
+frequency of starting
+z
+starts/h
+angular acceleration
+α
+rad/s2
+efficiency
+η
+static efficiency
+ηs
+friction coefficient
+μ
+rad
+1 rev = 2 π rad
+°
+1° = π rad
+angular velocity
+ω
+-
+1 rad/s ≈ 9.55 min-1
+Additional Indications
+Definition
+Ind.
+maximum
+max
+minimum
+min
+nominal
+N
+with respect to high speed shaft (input)
+1
+with respect to low speed shaft (output)
+2
+from ... to
+÷
+approximately equal to
+≈
+greater than or equal to
+≥
+less than or equal to
+≤
+RF • RK  SERIES
+plane angle
+φ
+11
+
+
+===== PAGE 12 =====
+This page is left blank intentionally
+12
+RF • RK  SERIES
+
+
+===== PAGE 13 =====
+4 - General Specifications
+RF • RK  SERIES
+The gearboxes, RF / RK series are designed according to latest ISO 
+engineering specifications with the help of computer aided structural analysis 
+for displacement and stress field. 
+The monolithic framework does not deflect under the effect of torque and 
+external loads with effective results on sealing surfaces. 
+The gearboxes of series RF /RK are manufactured of cast iron for all the sizes. 
+The shaft mount version allows the flange mount B5 conversion by simply 
+fitting one of the many output flanges available. 
+Various dimensions and types of output shafts (hollow with through keyway, 
+hollow with shrink disk and solid with single or double end) are available for 
+the majority of applications.
+The series RF & RK is made in 7 & 6 sizes respectively, 30 reduction ratios and 
+output torques between 400 and 8400Nm.
+- RF - parallel shaft gearboxes, hollow output shaft, two- and three-stage
+execution.
+- RK - bevel/helical gearboxes, right-angle input, hollow output shaft, three-
+stage execution.
+13
+Multipurpose housing
+Foot & Foot/flange mountings
+One housing for 2- & 3-stages
+Input
+IEC motor adapters
+with bore and keyway fitting
+Oil seals
+NBR - Nitrile Butadiene Rubber
+Viton and Silicone on request
+Bearings
+Ball or roller types according to sizes
+and technical requirements
+Lubrication
+Grade ISO VG 320; Filled with Oil
+Breather / Oil plugs
+Output
+Hollow / solid shafts,
+metric and imperial
+Gearing
+Alloy steel Case hardened 
+Profile ground
+Housing & covers
+Grey cast iron
+
+
+===== PAGE 14 =====
+4.1 - Parallel helical gearmotors (RF)
+RF 42/3
+RF 52/3
+RF 62/3
+RF 72/3
+RF 82/3
+RF 92/3
+RF 102/3
+(Nm)
+400
+600
+900
+1500
+2700
+4500
+8250
+(mm)
+35
+40
+50
+60
+70
+75
+90
+(mm)
+160
+200
+250
+250
+350
+450
+450
+(N)
+6400
+8700
+14500
+16000
+18000
+35000
+43000
+Gear Unit Size
+Max. nominal radial load 
+ (Fr)
+ Atmost interchangeability (center height, shaft dia, mounting holes dia and their distance & etc.), 
+ and higher performance than market standards;
+ Mounting options - Foot / Flange / Shaft mounting; 
+ Single piece cast iron housing with high rigidity and accurate dimensions;
+ Well proportioned bearings of high-speed / low-speed shaft in order to withstand high loads on shaft end;
+ High quality manufacturing standards;
+ High reliability with proper testing and performance;
+ IE3, IE2 efficiency motors;
+ Compact and accurate rating motors, with quick acting brake version, suitable for applications with inverter.
+Maximum nominal torque    (Mn2)
+Low speed hollow shaft dia     (D)
+Output flange diameter 
+ (P)
+14
+RF • RK  SERIES
+8250Nm
+4500Nm
+2700Nm
+1500Nm
+900Nm
+600Nm
+400Nm
+RF 102/3
+RF 92/3
+RF 82/3
+RF 72/3
+RF 62/3
+RF 52/3
+RF 42/3
+
+
+===== PAGE 15 =====
+4.2 - Helical-bevel gearmotors (RK)
+RK 43
+RK 63
+RK 73
+RK 83
+RK 93
+RK 103
+(Mn2)
+(Nm)
+450
+850
+1530
+2500
+4500
+8400
+(D)
+(mm)
+40
+50
+60
+70
+75
+90
+(P)
+(mm)
+160
+250
+300
+350
+450
+450
+(Fr)
+(N)
+6000
+8000
+15000
+15700
+23000
+43000
+RF • RK  SERIES
+ Single piece rigidly built cast iron housing with more lubricant volume;
+ Roller bearings at low speed shaft to withstand high external load;
+ High overload capacity and lesser noise operations;
+ Direct IEC input adapter of the gear unit;
+ Ground or lapped finish Gleason spiral bevel gears for smooth operations under higher load;
+ Load capacity of gears calculated for tooth strength and pitting according to ISO standards;
+ Oil-bath lubrication; all sizes are supplied filled with mineral oil;
+ Metal oil plugs (breather / oil level / drain plugs)
+Maximum nominal torque
+Low speed hollow shaft dia
+Output flange diameter
+Max. nominal radial load 
+15
+Gear Unit Size
+8400Nm
+4500Nm
+2500Nm
+1530Nm
+850Nm
+450Nm
+RK 103
+RK 93
+RK 83
+RK 73
+RK 63
+RK 43
+
+
+===== PAGE 16 =====
+5 - Designation
+AC
+70
+M1
+RF
+08
+3
+IEC 132 B5
+20.0:1
+Mounting 
+Position
+Gear 
+Unit Size
+No. of 
+Stages
+Type of Input and 
+Size
+Transmission 
+Ratio
+Type of Output 
+Shaft
+Output 
+Shaft Size
+Series
+RF
+Parallel Helical
+06
+07
+08
+09
+04
+10
+05
+…
+5:1
+…
+…
+20:1
+Refer 
+Tables
+…
+M1
+M2
+M3
+M4
+M5
+M6
+…
+…
+Refer 
+Drgs
+35
+…
+…
+70
+RK
+Helical Bevel
+2
+3
+3
+AC
+Hollow Shaft 
+with Keyway
+AS
+Single Extn 
+Solid Shaft
+AD
+Double Extn 
+Solid Shaft
+ACC
+Hollow Shaft 
+with Shrink 
+IEC Adapter
+63 B5
+71 B5
+80 B5
+AE
+Solid Input
+225 B5
+100 B5
+112 B5
+132 B5
+90 B5
+160 B5
+180 B5
+200 B5
+16
+RF • RK  SERIES
+
+
+===== PAGE 17 =====
+5 - Designation
+On Request
+BTF
+Torque Arm 
+Output Flange 
+Position
+LH
+RH
+Refer Above 
+Illustration
+X3
+Terminal Box 
+Position
+/ …
+Customization / 
+Special Features
+Output 
+Flange
+BTA
+Torque Bush
+Flange Version
+BTA - BTF
+Shaft Mounting 
+Options
+DFU
+LH
+RF • RK  SERIES
+17
+
+
+===== PAGE 18 =====
+6 - Mounting Position & Lubricant Quantity
+Parallel Helical Gear Units (RF)
+The following illustration shows the MGM-Varvel mounting positions M1-M6 for RF series.
+RF • RK  SERIES
+18
+15.50
+28.20
+9.25
+11.50
+24.20
+9.75
+M6
+1.50
+3.40
+4.50
+9.30
+9.75
+15.50
+27.20
+M5
+21.00
+35.00
+ Oil Quantity (ltrs)
+M1
+2.20
+4.25
+6.75
+2.00
+2.50
+3.50
+6.50
+10.00
+Mounting 
+Position
+RF 04
+RF 05
+RF 06
+RF 07
+RF 08
+RF 09
+RF 10
+M2
+1.80
+1.50
+3.00
+4.50
+8.50
+13.00
+22.50
+43.20
+Make sure to the adjust the oil fill quantity and the position of breather plug for new mounting one from the existing one. 
+Contact MGM-Varvel for the mounting position change to the M6 / M3 / M4.
+13.50
+22.50
+43.20
+M4
+1.80
+2.20
+4.00
+7.20
+M3
+1.80
+2.20
+4.00
+7.20
+Foot Version
+Flange Version
+
+
+===== PAGE 19 =====
+6 - Mounting Position & Lubricant Quantity
+Helical Bevel Gear Units (RK)
+The following illustration shows the MGM-Varvel mounting positions M1-M6 for RK series.
+M2
+1.20
+3.50
+5.50
+10.00
+17.00
+ Oil Quantity (ltrs)
+Mounting 
+Position
+RK 04
+RK 06
+RK 07
+RK 08
+RK 09
+RK 10
+M1
+1.00
+2.00
+6.00
+6.00
+9.70
+18.00
+35.00
+M3
+1.20
+3.50
+5.50
+10.00
+17.00
+35.00
+18.00
+30.20
+M5
+1.90
+3.50
+6.00
+12.00
+21.00
+34.20
+M4
+1.50
+3.00
+6.00
+11.00
+16.00
+25.20
+Make sure to the adjust the oil fill quantity and the position of breather plug for new mounting one from the existing one. 
+Contact MGM-Varvel for the mounting position change to the M2 / M3.
+19
+M6
+1.40
+3.00
+5.50
+10.00
+RF • RK  SERIES
+Foot Version
+Flange Version
+
+
+===== PAGE 20 =====
+7.1 - Position of Oil Plugs - Parallel Helical Gear Units (RF)
+RF • RK  SERIES
+20

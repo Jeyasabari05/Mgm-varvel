@@ -1,0 +1,402 @@
+[
+  {
+    "y": 33.9,
+    "x": 20.3,
+    "text": "Product Information"
+  },
+  {
+    "y": 71.7,
+    "x": 20.2,
+    "text": "Catalog Designation"
+  },
+  {
+    "y": 91.4,
+    "x": 19.9,
+    "text": "GEARBOX IR FPM 63 1: 35.74 IEC 90 B5 (24x200) - MOUNTING POSITION V1 - OUTPUT FLANGE D200 +"
+  },
+  {
+    "y": 108.5,
+    "x": 19.9,
+    "text": "SMX 90 LA4 B5, 1.5kW, 240/415V, 50Hz, IP55, CLF"
+  },
+  {
+    "y": 125.7,
+    "x": 19.9,
+    "text": "Coaxial Helical gear units IR + AC motors SMX.. (IE3)"
+  },
+  {
+    "y": 152.0,
+    "x": 20.2,
+    "text": "Product Data"
+  },
+  {
+    "y": 153.7,
+    "x": 532.4,
+    "text": "DS-021-0046"
+  },
+  {
+    "y": 179.8,
+    "x": 19.9,
+    "text": "Rated motor power"
+  },
+  {
+    "y": 180.3,
+    "x": 176.8,
+    "text": "(kW) : 1.5"
+  },
+  {
+    "y": 197.0,
+    "x": 19.9,
+    "text": "Rated motor speed"
+  },
+  {
+    "y": 197.4,
+    "x": 173.5,
+    "text": "(rpm) : 1430"
+  },
+  {
+    "y": 213.8,
+    "x": 19.9,
+    "text": "Overall gear ratio"
+  },
+  {
+    "y": 214.2,
+    "x": 187.9,
+    "text": "(i) : 35.74"
+  },
+  {
+    "y": 230.7,
+    "x": 19.9,
+    "text": "Output speed"
+  },
+  {
+    "y": 231.2,
+    "x": 173.5,
+    "text": "(rpm) : 40.0"
+  },
+  {
+    "y": 247.9,
+    "x": 19.9,
+    "text": "Output torque"
+  },
+  {
+    "y": 248.3,
+    "x": 175.8,
+    "text": "(Nm) : 337"
+  },
+  {
+    "y": 265.0,
+    "x": 19.9,
+    "text": "Service factor"
+  },
+  {
+    "y": 265.5,
+    "x": 203.4,
+    "text": ": 1.4"
+  },
+  {
+    "y": 282.2,
+    "x": 19.9,
+    "text": "Output shaft type"
+  },
+  {
+    "y": 282.6,
+    "x": 203.4,
+    "text": ": Solid with key"
+  },
+  {
+    "y": 299.3,
+    "x": 19.9,
+    "text": "Output shaft dimensions"
+  },
+  {
+    "y": 299.3,
+    "x": 299.5,
+    "text": "P - Foot Mounting Positions"
+  },
+  {
+    "y": 299.3,
+    "x": 441.6,
+    "text": "V - Flange Mounting Positions"
+  },
+  {
+    "y": 299.8,
+    "x": 174.4,
+    "text": "(mm) : ø35k6 x 70L"
+  },
+  {
+    "y": 316.5,
+    "x": 19.9,
+    "text": "Permitted output overhung load"
+  },
+  {
+    "y": 317.0,
+    "x": 183.7,
+    "text": "(N) : 5400"
+  },
+  {
+    "y": 333.6,
+    "x": 19.9,
+    "text": "Direction of rotation"
+  },
+  {
+    "y": 334.1,
+    "x": 203.4,
+    "text": ": Bi-directional"
+  },
+  {
+    "y": 350.8,
+    "x": 19.9,
+    "text": "Mounting position"
+  },
+  {
+    "y": 351.3,
+    "x": 203.4,
+    "text": ": V1"
+  },
+  {
+    "y": 368.0,
+    "x": 19.9,
+    "text": "Flange diamter (If flange mounted)"
+  },
+  {
+    "y": 368.5,
+    "x": 174.4,
+    "text": "(mm) : 200"
+  },
+  {
+    "y": 385.1,
+    "x": 19.9,
+    "text": "Lubricant type"
+  },
+  {
+    "y": 385.6,
+    "x": 203.4,
+    "text": ": ISO VG 220"
+  },
+  {
+    "y": 402.3,
+    "x": 19.9,
+    "text": "Lubricant quantity"
+  },
+  {
+    "y": 402.8,
+    "x": 168.1,
+    "text": "(Litres) : 1.25"
+  },
+  {
+    "y": 419.5,
+    "x": 19.9,
+    "text": "Position of terminal box"
+  },
+  {
+    "y": 419.9,
+    "x": 203.4,
+    "text": ": KP1"
+  },
+  {
+    "y": 436.6,
+    "x": 19.9,
+    "text": "Cable entry position"
+  },
+  {
+    "y": 437.1,
+    "x": 203.4,
+    "text": ": A"
+  },
+  {
+    "y": 453.8,
+    "x": 19.9,
+    "text": "Finished paint colour"
+  },
+  {
+    "y": 454.3,
+    "x": 203.4,
+    "text": ": RAL 5010 Blue"
+  },
+  {
+    "y": 470.9,
+    "x": 19.9,
+    "text": "Motor type"
+  },
+  {
+    "y": 470.9,
+    "x": 382.8,
+    "text": "Terminal Box Positions"
+  },
+  {
+    "y": 471.4,
+    "x": 203.4,
+    "text": ": Standard"
+  },
+  {
+    "y": 488.1,
+    "x": 19.9,
+    "text": "Number of poles"
+  },
+  {
+    "y": 488.1,
+    "x": 422.5,
+    "text": "KP1"
+  },
+  {
+    "y": 488.6,
+    "x": 175.8,
+    "text": "(nos) : 4"
+  },
+  {
+    "y": 505.3,
+    "x": 19.9,
+    "text": "Duration factor"
+  },
+  {
+    "y": 505.7,
+    "x": 183.1,
+    "text": "(%) : S1-100"
+  },
+  {
+    "y": 522.4,
+    "x": 19.9,
+    "text": "Efficiency class"
+  },
+  {
+    "y": 522.9,
+    "x": 203.4,
+    "text": ": IE3"
+  },
+  {
+    "y": 539.6,
+    "x": 19.9,
+    "text": "Efficiency"
+  },
+  {
+    "y": 540.1,
+    "x": 183.1,
+    "text": "(%) : 85.3"
+  },
+  {
+    "y": 548.1,
+    "x": 363.7,
+    "text": "KP4"
+  },
+  {
+    "y": 548.1,
+    "x": 480.4,
+    "text": "KP2"
+  },
+  {
+    "y": 556.7,
+    "x": 19.9,
+    "text": "CE Marking"
+  },
+  {
+    "y": 557.2,
+    "x": 203.4,
+    "text": ": Yes"
+  },
+  {
+    "y": 573.9,
+    "x": 19.9,
+    "text": "Motor voltage"
+  },
+  {
+    "y": 574.4,
+    "x": 184.6,
+    "text": "(V) : 240 / 415"
+  },
+  {
+    "y": 591.1,
+    "x": 19.9,
+    "text": "Frequency"
+  },
+  {
+    "y": 591.5,
+    "x": 180.0,
+    "text": "(Hz) : 50"
+  },
+  {
+    "y": 608.2,
+    "x": 19.9,
+    "text": "Rated current"
+  },
+  {
+    "y": 608.2,
+    "x": 422.5,
+    "text": "KP1"
+  },
+  {
+    "y": 608.7,
+    "x": 184.4,
+    "text": "(A) : 3.5 at 415V"
+  },
+  {
+    "y": 625.4,
+    "x": 19.9,
+    "text": "Power factor"
+  },
+  {
+    "y": 625.4,
+    "x": 375.8,
+    "text": "Cable Entry Hole Positions"
+  },
+  {
+    "y": 625.9,
+    "x": 168.2,
+    "text": "(Cos ø) : 0.74"
+  },
+  {
+    "y": 642.5,
+    "x": 19.9,
+    "text": "Insulation class"
+  },
+  {
+    "y": 643.0,
+    "x": 203.4,
+    "text": ": F"
+  },
+  {
+    "y": 659.7,
+    "x": 19.9,
+    "text": "Protection class"
+  },
+  {
+    "y": 660.2,
+    "x": 203.4,
+    "text": ": IP 55"
+  },
+  {
+    "y": 676.9,
+    "x": 19.9,
+    "text": "Design requirement"
+  },
+  {
+    "y": 677.3,
+    "x": 203.4,
+    "text": ": Europe (CE)"
+  },
+  {
+    "y": 694.0,
+    "x": 19.9,
+    "text": "Weight"
+  },
+  {
+    "y": 694.5,
+    "x": 177.1,
+    "text": "(kgs) : 45"
+  },
+  {
+    "y": 718.4,
+    "x": 20.2,
+    "text": "Additional Features"
+  },
+  {
+    "y": 802.2,
+    "x": 19.6,
+    "text": "The present product information does not represent a quotation in legal terms. Technical data must be confirmed in a final technical verification. This verification is performed when creating the"
+  },
+  {
+    "y": 811.7,
+    "x": 19.6,
+    "text": "quotation/order."
+  }
+]

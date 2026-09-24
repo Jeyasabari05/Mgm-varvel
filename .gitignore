@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+scratch/test_ds0210046.pdf
+*.pdf
+!scratch/

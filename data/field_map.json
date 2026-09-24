@@ -1,0 +1,162 @@
+{
+  "rated_motor_power": {
+    "catalogue_source": "Selection tables RF pp.37-45 / RK pp.71-78",
+    "notation": "P1 (kW)",
+    "method": "exact_table"
+  },
+  "rated_motor_speed": {
+    "catalogue_source": "Symbols p.11: i = n1/n2 together with tabulated n2 and i",
+    "notation": "n1 (rpm)",
+    "method": "derived_i_n2"
+  },
+  "overall_gear_ratio": {
+    "catalogue_source": "Selection tables column i",
+    "notation": "i",
+    "method": "exact_table"
+  },
+  "output_speed": {
+    "catalogue_source": "Selection tables column n2",
+    "notation": "n2 rpm",
+    "method": "exact_table"
+  },
+  "output_torque": {
+    "catalogue_source": "Selection tables column M2",
+    "notation": "M2 Nm",
+    "method": "exact_table"
+  },
+  "service_factor": {
+    "catalogue_source": "Selection tables column FS",
+    "notation": "FS",
+    "method": "exact_table"
+  },
+  "output_shaft_type": {
+    "catalogue_source": "Designation p.16: AC / AS / AD / ACC",
+    "notation": "AC Hollow with keyway (default for RF/RK)",
+    "method": "designation_default"
+  },
+  "output_shaft_dimensions": {
+    "catalogue_source": "p.14-15 D; p.65/95 ACC; p.94 RK AS",
+    "notation": "D / k6 / H7",
+    "method": "size_lookup"
+  },
+  "permitted_output_overhung_load": {
+    "catalogue_source": "Selection tables column Fr2",
+    "notation": "Fr2 N",
+    "method": "exact_table"
+  },
+  "direction_of_rotation": {
+    "catalogue_source": "p.96 Output Direction of Rotation with Backstop",
+    "notation": "Bi-directional unless backstop specified",
+    "method": "catalogue_default"
+  },
+  "mounting_position": {
+    "catalogue_source": "pp.18-19 M1-M6",
+    "notation": "M1..M6",
+    "method": "user_input_catalogue_set"
+  },
+  "flange_diameter": {
+    "catalogue_source": "p.14-15 output flange P (mm)",
+    "notation": "P",
+    "method": "size_lookup"
+  },
+  "lubricant_type": {
+    "catalogue_source": "p.13 Grade ISO VG 320; p.22 oil type table",
+    "notation": "ISO VG 320",
+    "method": "catalogue_spec"
+  },
+  "lubricant_quantity": {
+    "catalogue_source": "pp.18-19 oil quantity by size and M1-M6",
+    "notation": "litres",
+    "method": "size_mounting_lookup"
+  },
+  "position_of_terminal_box": {
+    "catalogue_source": "p.17 designation X3 terminal box; DS diagram KP1-KP4",
+    "notation": "KP1 (user-selectable catalogue option)",
+    "method": "user_input_catalogue_set"
+  },
+  "cable_entry_position": {
+    "catalogue_source": "DS diagram A; catalogue terminal-box options",
+    "notation": "A",
+    "method": "user_input_catalogue_set"
+  },
+  "finished_paint_colour": {
+    "catalogue_source": "NOT IDENTIFIED in RF-RK catalogue (painting note p.98 only)",
+    "notation": "",
+    "method": "unavailable"
+  },
+  "motor_type": {
+    "catalogue_source": "p.28 BAX brake / SMX standard",
+    "notation": "Standard (SMX)",
+    "method": "catalogue_default"
+  },
+  "number_of_poles": {
+    "catalogue_source": "Gearmotor tables use n2 consistent with 4-pole ~1440 rpm (50 Hz)",
+    "notation": "4",
+    "method": "inferred_from_n1"
+  },
+  "duration_factor": {
+    "catalogue_source": "p.28-29 continuous duty S1",
+    "notation": "S1-100",
+    "method": "catalogue_spec"
+  },
+  "efficiency_class": {
+    "catalogue_source": "p.13 / p.28 IE2 / IE3; constructive features list IE3, IE2",
+    "notation": "IE3",
+    "method": "catalogue_spec_default_ie3"
+  },
+  "efficiency": {
+    "catalogue_source": "NOT IDENTIFIED — no η% motor table in RF-RK catalogue",
+    "notation": "η %",
+    "method": "unavailable"
+  },
+  "ce_marking": {
+    "catalogue_source": "p.31 CE Mark",
+    "notation": "Yes",
+    "method": "catalogue_spec"
+  },
+  "motor_voltage": {
+    "catalogue_source": "p.28 Δ 240 V Y 415 V",
+    "notation": "U V",
+    "method": "catalogue_spec"
+  },
+  "frequency": {
+    "catalogue_source": "p.28 50 Hz",
+    "notation": "f Hz",
+    "method": "catalogue_spec"
+  },
+  "rated_current": {
+    "catalogue_source": "NOT IDENTIFIED — no I (A) motor table in RF-RK catalogue",
+    "notation": "I A",
+    "method": "unavailable"
+  },
+  "power_factor": {
+    "catalogue_source": "NOT IDENTIFIED — no cos φ motor table in RF-RK catalogue",
+    "notation": "Cos ø",
+    "method": "unavailable"
+  },
+  "insulation_class": {
+    "catalogue_source": "p.28 insulation class F",
+    "notation": "F",
+    "method": "catalogue_spec"
+  },
+  "protection_class": {
+    "catalogue_source": "p.28 IP 55",
+    "notation": "IP 55",
+    "method": "catalogue_spec"
+  },
+  "design_requirement": {
+    "catalogue_source": "p.31 CE / Europe market marking",
+    "notation": "Europe (CE)",
+    "method": "catalogue_spec"
+  },
+  "weight": {
+    "catalogue_source": "Selection tables Mass * kgs — gear unit WITHOUT motor (footnote)",
+    "notation": "kgs",
+    "method": "gear_unit_only"
+  },
+  "additional_features": {
+    "catalogue_source": "Blank in DS example unless option selected",
+    "notation": "",
+    "method": "optional"
+  }
+}
