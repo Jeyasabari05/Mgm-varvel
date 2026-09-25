@@ -9,13 +9,14 @@ from __future__ import annotations
 
 import re
 from datetime import datetime
+from io import BytesIO
 from pathlib import Path
 from typing import Any
 
 from openpyxl import Workbook, load_workbook
 from openpyxl.drawing.image import Image as ExcelImage
-from openpyxl.drawing.spreadsheet_drawing import AnchorMarker, OneCellAnchor
-from openpyxl.drawing.xdr import XDRPositiveSize2D
+from openpyxl.drawing.spreadsheet_drawing import AbsoluteAnchor, AnchorMarker, OneCellAnchor
+from openpyxl.drawing.xdr import XDRPoint2D, XDRPositiveSize2D
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Protection, Side
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.worksheet.worksheet import Worksheet
@@ -33,13 +34,11 @@ DATA_START_ROW = 5
 
 # DS-021-0046 page layout (matches the PDF, not a data table).
 PDF_FONT = "Arial"
-DS_TITLE_ROW = 1
-DS_BAR_ROW = 2
-DS_CATALOG_LABEL_ROW = 4
-DS_CATALOG_VALUE_ROW = 5
-DS_FAMILY_ROW = 7
-DS_PRODUCT_DATA_ROW = 9
-DS_FIELD_START_ROW = 11
+DS_FIELD_START_ROW = 9
+
+TEMPLATE_LABELS = {
+    "flange_diameter": "Flange diameter (If flange mounted)",
+}
 
 # Identity rows required by DS-021-0046 (above the numbered Product Data list).
 IDENTITY_SPECS = [
@@ -213,9 +212,17 @@ def _pdf_font(size: float, *, bold: bool = False, italic: bool = False, color: s
 
 
 def _write_ds_layout(ws: Worksheet, report: dict[str, Any]) -> None:
-    """Render the DS-021-0046 page: same type, colours, and stacking as the PDF."""
-    hairline = Border(bottom=Side(style="thin", color="8AA0B8"))
-    none_border = Border()
+    """Recreate the supplied Product Information page as editable Excel cells."""
+    ink = "1F2937"
+    muted = "64748B"
+    green = "008F63"
+    red = "D31343"
+    pale = "F1F5F9"
+    inner = "F8FAFC"
+    rule = "D6E0EA"
+    white = "FFFFFF"
+    thin_blue = Side(style="thin", color="CAD6E2")
+    faint_rule = Side(style="hair", color="DCE5EF")
 
     ws.sheet_view.showGridLines = False
     ws.sheet_view.view = "pageLayout"
@@ -224,104 +231,195 @@ def _write_ds_layout(ws: Worksheet, report: dict[str, Any]) -> None:
     ws.page_setup.fitToPage = True
     ws.page_setup.fitToWidth = 1
     ws.page_setup.fitToHeight = 1
-    ws.page_margins.left = 0.55
-    ws.page_margins.right = 0.55
-    ws.page_margins.top = 0.47
-    ws.page_margins.bottom = 0.55
-    ws.page_margins.header = 0.2
-    ws.page_margins.footer = 0.2
-    # Match the source page: labels and values occupy the left portion, while
-    # the clear area on the right is reserved for the source document's diagrams.
-    ws.column_dimensions["A"].width = 31
-    ws.column_dimensions["B"].width = 20
-    ws.column_dimensions["C"].width = 31
+    ws.page_margins.left = 0.62
+    ws.page_margins.right = 0.62
+    ws.page_margins.top = 0.5
+    ws.page_margins.bottom = 0.42
+    ws.page_margins.header = 0.15
+    ws.page_margins.footer = 0.15
     ws.print_options.horizontalCentered = True
+    ws.sheet_properties.pageSetUpPr.fitToPage = True
+    ws.sheet_properties.pageSetUpPr.autoPageBreaks = False
 
+    widths = {"A": 29, "B": 25, "C": 4}
+    for col in "DEFGHIJKL":
+        widths[col] = 4.2
+    for col, width in widths.items():
+        ws.column_dimensions[col].width = width
+
+    # Header and designation block.
     ws.merge_cells("A1:C1")
-    ws["A1"] = "Product Information"
-    ws["A1"].font = _pdf_font(16, bold=True, color=NAVY)
-    ws["A1"].alignment = Alignment(vertical="bottom")
-
+    ws["A1"] = "PRODUCT INFORMATION"
+    ws["A1"].font = _pdf_font(15, bold=True, color=ink)
+    ws["A1"].alignment = Alignment(vertical="center")
+    ws.merge_cells("D1:L1")
     logo_path = Path(__file__).resolve().parent.parent / "static" / "MGM Varvel Logo.jpg"
     if logo_path.is_file():
-        logo = ExcelImage(logo_path)
-        scale = 130 / logo.width
-        logo.width = 130
-        logo.height *= scale
-        # Anchor within the merged title cell, aligned to the page's right edge.
-        logo.anchor = OneCellAnchor(
-            _from=AnchorMarker(col=1, colOff=210 * 9525, row=0, rowOff=0),
-            ext=XDRPositiveSize2D(cx=logo.width * 9525, cy=logo.height * 9525),
+        logo = ExcelImage(BytesIO(logo_path.read_bytes()))
+        logo.width = 100
+        logo.height = logo.width * 502 / 1600
+        # Absolute sheet coordinates keep the logo right aligned inside the
+        # merged D1:L1 header, independent of Excel's column-offset rounding.
+        logo.anchor = AbsoluteAnchor(
+            pos=XDRPoint2D(x=433 * 12700, y=1 * 12700),
+            ext=XDRPositiveSize2D(cx=int(logo.width * 9525), cy=int(logo.height * 9525)),
         )
         ws.add_image(logo)
-    ws.row_dimensions[DS_TITLE_ROW].height = 22
+    ws.row_dimensions[1].height = 25
+    for col in range(1, 13):
+        ws.cell(2, col).border = Border(bottom=Side(style="thin", color="CBD7E3"))
+    ws.row_dimensions[2].height = 6
+    ws.row_dimensions[3].height = 12
 
-    ws.merge_cells("A2:C2")
-    ws["A2"].fill = PatternFill("solid", fgColor=BLUE)
-    ws.row_dimensions[DS_BAR_ROW].height = 4
-
-    ws.row_dimensions[3].height = 10
-
-    ws.merge_cells("A4:C4")
-    ws["A4"] = "Catalog Designation"
-    ws["A4"].font = _pdf_font(8.5, bold=True, color="333333")
-    ws.row_dimensions[DS_CATALOG_LABEL_ROW].height = 14
-
-    ws.merge_cells("A5:C5")
+    ws.merge_cells("A4:L4")
+    ws.merge_cells("A5:L5")
+    ws.merge_cells("A6:L6")
+    for row in (4, 5, 6):
+        for col in range(1, 13):
+            ws.cell(row, col).fill = PatternFill("solid", fgColor=pale)
+            ws.cell(row, col).border = Border(
+                left=Side(style="medium", color=red) if col == 1 else Side(),
+                bottom=thin_blue if row == 6 else Side(),
+            )
+    ws["A4"] = "CATALOG DESIGNATION"
+    ws["A4"].font = _pdf_font(8, bold=True, color=green)
+    ws["A4"].alignment = Alignment(vertical="center")
     ws["A5"] = _as_text(report.get("catalog_designation", ""))
-    ws["A5"].font = _pdf_font(8, color="222222")
-    ws["A5"].alignment = Alignment(wrap_text=True, vertical="top")
-    ws.row_dimensions[DS_CATALOG_VALUE_ROW].height = 32
+    ws["A5"].font = _pdf_font(8, bold=True, color=ink)
+    ws["A5"].alignment = Alignment(wrap_text=True, vertical="center")
+    ws["A6"] = _as_text(report.get("product_family", ""))
+    ws["A6"].font = _pdf_font(7.5, bold=True, color=muted)
+    ws["A6"].alignment = Alignment(wrap_text=True, vertical="center")
+    ws.row_dimensions[4].height = 14
+    ws.row_dimensions[5].height = 20
+    ws.row_dimensions[6].height = 14
+    ws.row_dimensions[7].height = 12
 
-    ws.row_dimensions[6].height = 6
+    ws["A8"] = "Product Data"
+    ws["A8"].font = _pdf_font(9, bold=True, color=green)
+    ws["A8"].alignment = Alignment(vertical="center")
+    ws["B8"] = _as_text(report.get("document_id", "DS-021-0046"))
+    ws["B8"].font = _pdf_font(8.5, bold=True, color=white)
+    ws["B8"].fill = PatternFill("solid", fgColor=red)
+    ws["B8"].alignment = Alignment(horizontal="center", vertical="center")
+    ws["A8"].border = Border(bottom=Side(style="medium", color=green))
+    ws["B8"].border = Border(bottom=Side(style="medium", color=green))
+    ws["C8"].border = Border(bottom=Side(style="medium", color=green))
+    ws.row_dimensions[8].height = 24
 
-    ws.merge_cells("A7:C7")
-    ws["A7"] = _as_text(report.get("product_family", ""))
-    ws["A7"].font = _pdf_font(8, color="222222")
-    ws["A7"].alignment = Alignment(wrap_text=True, vertical="center")
-    ws.row_dimensions[DS_FAMILY_ROW].height = 16
-
-    ws.row_dimensions[8].height = 10
-
-    ws.merge_cells("A9:B9")
-    ws["A9"] = "Product Data"
-    ws["A9"].font = _pdf_font(8.5, bold=True, color="333333")
-    ws["A9"].fill = PatternFill("solid", fgColor=LIGHT)
-    ws["A9"].alignment = Alignment(vertical="center", indent=1)
-    ws["C9"] = _as_text(report.get("document_id", "DS-021-0046"))
-    ws["C9"].font = _pdf_font(8.5, bold=True, color=NAVY)
-    ws["C9"].fill = PatternFill("solid", fgColor=LIGHT)
-    ws["C9"].alignment = Alignment(horizontal="right", vertical="center")
-    ws.row_dimensions[DS_PRODUCT_DATA_ROW].height = 18
-
-    ws.row_dimensions[10].height = 6
-
+    # Product-data table. The left and right values remain real, editable cells.
     fields = list(report.get("fields") or [])
+    row_by_key: dict[str, int] = {}
     for offset, field in enumerate(fields):
         row = DS_FIELD_START_ROW + offset
-        shown = display_value(field)
+        row_by_key[field["key"]] = row
         missing = field.get("value") == MISSING or str(field.get("value", "")).startswith("Field required")
-        a = ws.cell(row, 1, field.get("label", ""))
+        label = TEMPLATE_LABELS.get(field["key"], field.get("label", ""))
+        shown = display_value(field).replace(") : ", "): ")
+        if field["key"] == "additional_features" and not _as_text(field.get("value")):
+            shown = ": —"
+        shade = white if offset % 2 else "F5F8FB"
+        for col in (1, 2):
+            cell = ws.cell(row, col)
+            cell.fill = PatternFill("solid", fgColor=shade)
+            cell.border = Border(bottom=faint_rule)
+        a = ws.cell(row, 1, label)
         b = ws.cell(row, 2, shown)
-        a.font = _pdf_font(8.5, color="333333")
-        b.font = _pdf_font(8.5, bold=True, color="AA3333" if missing else NAVY)
-        a.alignment = Alignment(vertical="center")
-        b.alignment = Alignment(vertical="center", wrap_text=True)
-        a.border = hairline
-        b.border = hairline
-        # Column C stays open beside the fields, preserving the diagram area
-        # visible on DS-021-0046 and keeping text from running into it.
-        ws.row_dimensions[row].height = 16.5
+        a.font = _pdf_font(7.5, bold=True, color=ink)
+        b.font = _pdf_font(7.5, italic=missing, color=muted if missing else ink)
+        a.alignment = Alignment(vertical="center", wrap_text=False)
+        b.alignment = Alignment(vertical="center", wrap_text=False, shrink_to_fit=True)
+        b.protection = Protection(locked=False)
+        ws.row_dimensions[row].height = 19.5
 
-    last = DS_FIELD_START_ROW + len(fields) - 1
-    disc_row = last + 2
-    ws.merge_cells(start_row=disc_row, start_column=1, end_row=disc_row, end_column=3)
-    disc = ws.cell(disc_row, 1, _as_text(report.get("disclaimer", "")))
-    disc.font = _pdf_font(7, italic=True, color="444444")
-    disc.alignment = Alignment(wrap_text=True, vertical="top")
-    disc.border = none_border
-    ws.row_dimensions[disc_row].height = 42
-    ws.print_area = f"A1:C{disc_row}"
+    # Template illustration cards. The small reference icons are cropped from
+    # the supplied PDF; card labels and position values remain worksheet cells.
+    card_header = Font(name=PDF_FONT, size=8, bold=True, color=red)
+    card_title = Font(name=PDF_FONT, size=8.5, bold=True, color=ink)
+    card_ranges = ((8, 18, "P - FOOT / V - FLANGE MOUNTING POSITIONS"),
+                   (19, 29, "TERMINAL BOX POSITIONS"),
+                   (30, 40, "CABLE ENTRY HOLE POSITIONS"))
+    for header_row, bottom_row, title in card_ranges:
+        for row in range(header_row, bottom_row + 1):
+            for col in range(4, 13):
+                cell = ws.cell(row, col)
+                cell.fill = PatternFill("solid", fgColor=inner if row > header_row else white)
+                cell.border = Border(
+                    left=thin_blue if col == 4 else Side(),
+                    right=thin_blue if col == 12 else Side(),
+                    top=thin_blue if row == header_row else Side(),
+                    bottom=thin_blue if row == bottom_row else Side(),
+                )
+        ws.merge_cells(start_row=header_row, start_column=4, end_row=header_row, end_column=12)
+        header = ws.cell(header_row, 4)
+        header.value = title
+        header.font = card_header
+        header.alignment = Alignment(vertical="center")
+        header.border = Border(bottom=Side(style="dashed", color=rule),
+                               top=thin_blue, left=thin_blue, right=thin_blue)
+        ws.row_dimensions[header_row].height = 25
+        inner_top = header_row + 1
+        inner_bottom = bottom_row - 1
+        for row in range(inner_top, inner_bottom + 1):
+            for col in range(4, 13):
+                cell = ws.cell(row, col)
+                cell.border = Border(
+                    left=thin_blue if col == 4 else cell.border.left,
+                    right=thin_blue if col == 12 else cell.border.right,
+                    top=thin_blue if row == inner_top else cell.border.top,
+                    bottom=thin_blue if row == inner_bottom else cell.border.bottom,
+                )
+
+    def add_card_icon(filename: str, row: int, row_offset_pt: float, size: tuple[int, int]) -> None:
+        path = Path(__file__).resolve().parent.parent / "static" / filename
+        if not path.is_file():
+            return
+        icon = ExcelImage(BytesIO(path.read_bytes()))
+        icon.width, icon.height = size
+        icon.anchor = OneCellAnchor(
+            _from=AnchorMarker(col=7, colOff=0, row=row - 1,
+                               rowOff=int(row_offset_pt * 12700)),
+            ext=XDRPositiveSize2D(cx=icon.width * 9525, cy=icon.height * 9525),
+        )
+        ws.add_image(icon)
+
+    # Mounting-position card.
+    add_card_icon("template_mounting_icon.png", 12, 5, (40, 38))
+    ws.merge_cells("D14:L14")
+    ws["D14"] = "Mounting Positions\nP1 - P6 / V1 - V6 / Va / V2"
+    ws["D14"].font = card_title
+    ws["D14"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    # Terminal-box and cable-entry cards link to their editable table cells.
+    terminal_row = row_by_key.get("position_of_terminal_box")
+    cable_row = row_by_key.get("cable_entry_position")
+    add_card_icon("template_terminal_icon.png", 23, 3, (40, 50))
+    ws.merge_cells("D25:L25")
+    ws["D25"] = "Terminal Box Position\nPosition: "
+    if terminal_row:
+        ws["D25"] = f'= "Terminal Box Position"&CHAR(10)&"Position: "&SUBSTITUTE(B{terminal_row},": ","")'
+    ws["D25"].font = card_title
+    ws["D25"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    add_card_icon("template_cable_icon.png", 34, 1, (40, 50))
+    ws.merge_cells("D36:L36")
+    ws["D36"] = "Cable Entry Position\nPosition: "
+    if cable_row:
+        ws["D36"] = f'= "Cable Entry Position"&CHAR(10)&"Position: "&SUBSTITUTE(B{cable_row},": ","")'
+    ws["D36"].font = card_title
+    ws["D36"].alignment = Alignment(horizontal="center", vertical="center", wrap_text=True)
+
+    # Closing note and single-page print settings.
+    disclaimer_row = DS_FIELD_START_ROW + len(fields)
+    ws.merge_cells(start_row=disclaimer_row, start_column=1,
+                   end_row=disclaimer_row, end_column=12)
+    disc = ws.cell(disclaimer_row, 1, _as_text(report.get("disclaimer", "")))
+    disc.font = _pdf_font(7, color=muted)
+    disc.alignment = Alignment(wrap_text=True, vertical="center")
+    disc.border = Border(top=Side(style="medium", color=red))
+    disc.protection = Protection(locked=False)
+    ws.row_dimensions[disclaimer_row].height = 26
+    ws.print_area = f"A1:L{disclaimer_row}"
 
 
 def _write_report_sheet(ws: Worksheet, report: dict[str, Any], *, formulas: bool) -> None:
@@ -485,7 +583,7 @@ def generate_excel(
     report: dict[str, Any],
     output_path: str | Path,
     *,
-    include_edit_sheets: bool = False,
+    include_edit_sheets: bool = True,
 ) -> Path:
     output_path = Path(output_path)
     output_path.parent.mkdir(parents=True, exist_ok=True)
@@ -510,6 +608,10 @@ def generate_excel(
                 ws_orig.cell(row, col).protection = Protection(locked=True)
         ws_orig.protection.sheet = True
         ws_orig.protection.enable()
+        # Only the master-format datasheet should appear in ordinary print
+        # and PDF export. Reference/edit logs remain available by unhiding.
+        for support_sheet in wb.worksheets[1:]:
+            support_sheet.sheet_state = "hidden"
 
     wb.properties.title = f"Product Data {report.get('document_id', 'DS-021-0046')}"
     wb.properties.creator = "MGM-Varvel Product Selector"
@@ -633,6 +735,30 @@ def load_excel(path: str | Path) -> dict[str, Any]:
         )
     editable = _read_sheet_rows(wb[SHEET_EDITABLE])
     original = _read_sheet_rows(wb[SHEET_ORIGINAL])
+    # The formatted datasheet is the visible edit surface. Read its values
+    # back so PDF generation honors edits made directly on that page.
+    ds = wb[SHEET_DS]
+    editable_by_key = {row["key"]: row for row in editable}
+    original_by_key = {row["key"]: row for row in original}
+
+    def use_page_edit(key: str, value: str) -> None:
+        original_value = original_by_key.get(key, {}).get("value", "")
+        if key in editable_by_key and _as_text(value) != _as_text(original_value):
+            editable_by_key[key]["value"] = _as_text(value)
+
+    for key, cell in (("catalog_designation", "A5"), ("product_family", "A6"),
+                      ("document_id", "B8")):
+        use_page_edit(key, _as_text(ds[cell].value))
+    for offset, item in enumerate(original[len(IDENTITY_SPECS):]):
+        shown = _as_text(ds.cell(DS_FIELD_START_ROW + offset, 2).value)
+        match = re.match(r"^(?:\([^)]*\)\s*)?:\s*(.*)$", shown)
+        value = match.group(1) if match else shown
+        if item["key"] == "additional_features" and shown == ": —":
+            value = ""
+        use_page_edit(item["key"], value)
+    disclaimer_row = DS_FIELD_START_ROW + len(original) - len(IDENTITY_SPECS)
+    if "disclaimer" in editable_by_key:
+        use_page_edit("disclaimer", _as_text(ds.cell(disclaimer_row, 1).value))
     source_info: dict[str, str] = {}
     if SHEET_SOURCE in wb.sheetnames:
         ws = wb[SHEET_SOURCE]

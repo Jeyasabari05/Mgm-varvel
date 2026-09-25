@@ -325,14 +325,14 @@ class SelectorApp(tk.Tk):
                 ".xlsx", f"_{stamp}.xlsx"
             )
         try:
-            generate_excel(self.current_report, path)
+            generate_excel(self.current_report, path, include_edit_sheets=True)
         except PermissionError:
             stamp = datetime.now().strftime("%Y%m%d_%H%M%S")
             path = folder / default_excel_name(self.current_report).replace(
                 ".xlsx", f"_{stamp}.xlsx"
             )
             try:
-                generate_excel(self.current_report, path)
+                generate_excel(self.current_report, path, include_edit_sheets=True)
             except Exception as exc:
                 messagebox.showerror(APP_TITLE, f"Could not create Excel.\n\n{exc}")
                 return

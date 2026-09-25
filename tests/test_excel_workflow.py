@@ -19,6 +19,7 @@ from mgm_selector.excel_report import (  # noqa: E402
     SHEET_EDITABLE,
     SHEET_ORIGINAL,
     SHEET_SOURCE,
+    DS_FIELD_START_ROW,
     apply_excel_to_report,
     generate_excel,
     load_excel,
@@ -62,20 +63,34 @@ class ExcelWorkflowTests(unittest.TestCase):
             {SHEET_DS, SHEET_EDITABLE, SHEET_ORIGINAL, SHEET_CHANGES, SHEET_SOURCE},
         )
         self.assertEqual(wb.active.title, SHEET_DS)
+        self.assertTrue(all(wb[name].sheet_state == "hidden" for name in
+                            (SHEET_EDITABLE, SHEET_ORIGINAL, SHEET_CHANGES, SHEET_SOURCE)))
         ds = wb[SHEET_DS]
-        self.assertEqual(ds["A1"].value, "Product Information")
-        self.assertEqual(ds["B5"].value, "DS-021-0046")
+        self.assertEqual(ds["A1"].value, "PRODUCT INFORMATION")
+        self.assertEqual(ds["B8"].value, "DS-021-0046")
         labels = []
         values = []
-        row = 7
-        while ds.cell(row, 1).value:
+        for offset, field in enumerate(report["fields"]):
+            row = DS_FIELD_START_ROW + offset
             labels.append(ds.cell(row, 1).value)
             values.append(ds.cell(row, 2).value)
-            row += 1
-        expected_labels = [f["label"] for f in report["fields"]]
-        expected_values = [display_value(f) for f in report["fields"]]
+        expected_labels = [
+            "Flange diameter (If flange mounted)" if f["key"] == "flange_diameter" else f["label"]
+            for f in report["fields"]
+        ]
+        expected_values = [
+            (": —" if f["key"] == "additional_features" and not f["value"]
+             else display_value(f).replace(") : ", "): "))
+            for f in report["fields"]
+        ]
         self.assertEqual(labels, expected_labels)
         self.assertEqual(values, expected_values)
+        self.assertEqual(ds["A4"].value, "CATALOG DESIGNATION")
+        self.assertEqual(ds["A5"].value, report["catalog_designation"])
+        self.assertEqual(ds["A6"].value, report["product_family"])
+        self.assertEqual(len(ds._images), 4)
+        torque_row_on_page = DS_FIELD_START_ROW + [f["key"] for f in report["fields"]].index("output_torque")
+        self.assertFalse(ds.cell(torque_row_on_page, 2).protection.locked)
         ws = wb[SHEET_EDITABLE]
         keys = []
         row = DATA_START_ROW
@@ -99,14 +114,9 @@ class ExcelWorkflowTests(unittest.TestCase):
         generate_excel(report, path)
 
         wb = load_workbook(path)
-        ws = wb[SHEET_EDITABLE]
-        keys = []
-        row = DATA_START_ROW
-        while ws.cell(row, 1).value:
-            keys.append(ws.cell(row, 1).value)
-            row += 1
-        torque_row = keys.index("output_torque") + DATA_START_ROW
-        ws.cell(torque_row, 3).value = "337.5"
+        ws = wb[SHEET_DS]
+        torque_row = DS_FIELD_START_ROW + [f["key"] for f in report["fields"]].index("output_torque")
+        ws.cell(torque_row, 2).value = "(Nm): 337.5"
         wb.save(path)
 
         loaded = load_excel(path)
